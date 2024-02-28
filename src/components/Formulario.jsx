@@ -37,8 +37,6 @@ const Formulario = ({ pacientes,setPacientes }) => {
       id: generarId()
     }
 
-    console.log(objetoPaciente.id)
-
     setPacientes([...pacientes, objetoPaciente])
     
     setNombre('')
