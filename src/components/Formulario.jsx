@@ -21,6 +21,11 @@ const Formulario = ({ pacientes,setPacientes }) => {
       return
     }
 
+    const generarId = () => {
+      const date = Date.now().toString(36)
+      const math = Math.random().toString(36).substring(2)
+      return date+math
+    }
 
     // Objeto de paciente
     const objetoPaciente = {
@@ -28,8 +33,11 @@ const Formulario = ({ pacientes,setPacientes }) => {
       propietario,
       email,
       fecha,
-      sintomas
+      sintomas,
+      id: generarId()
     }
+
+    console.log(objetoPaciente.id)
 
     setPacientes([...pacientes, objetoPaciente])
     
