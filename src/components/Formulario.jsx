@@ -1,8 +1,8 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Error from "./Error"
 
 
-const Formulario = ({ pacientes,setPacientes }) => {
+const Formulario = ({ pacientes,setPacientes,paciente }) => {
 
 
   const [nombre, setNombre] = useState('')
@@ -11,6 +11,16 @@ const Formulario = ({ pacientes,setPacientes }) => {
   const [fecha, setFecha] = useState('')
   const [sintomas, setSintomas] = useState('')
   const [error, setError] = useState(false)
+
+  useEffect(() => {
+    const {nombre, propietario, email, fecha, sintomas} = paciente
+
+    setNombre(nombre)
+    setPropietario(propietario)
+    setEmail(email)
+    setFecha(fecha)
+    setSintomas(sintomas)
+  }, [paciente])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -140,7 +150,7 @@ const Formulario = ({ pacientes,setPacientes }) => {
         </div> 
         <input 
           type="submit"
-          className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-all"
+          className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-all rounded-lg"
           value="Agregar Mascota"
         />
       </form>
