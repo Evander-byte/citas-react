@@ -70,7 +70,7 @@ const Formulario = ({ pacientes,setPacientes,paciente, setPaciente }) => {
   
 
   return (
-    <div className=" mx-5 md:w-1/2 lg:w-2/5">
+    <div className="mx-5 md:w-1/2 lg:w-2/5">
       <h2  className="font-black text-3xl text-center">
         Seguimiento Pacientes
       </h2>
